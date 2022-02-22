@@ -23,7 +23,11 @@ COMPLETION_WAITING_DOTS="true"
 
 HIST_STAMPS="dd/mm/yyyy"
 
-plugins=(git sudo)
+plugins=(
+        git
+        sudo
+        zsh-autosuggestions
+        )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,12 +38,15 @@ else
   export EDITOR='nano'
 fi
 
-alias szc="source ~/.zshrc"
-alias zc="nano ~/.zshrc"
-alias install="sudo apt install -y"
+alias szc="$EDITOR ~/.zshrc"
+alias zc="$EDITOR ~/.zshrc"
+alias inst="sudo apt install -y"
 alias fix="sudo apt install -f"
-alias autorm="sudo apt autoremove -y"
+alias aurm="sudo apt autoremove -y"
 alias arm="sudo apt remove -y"
 alias py="python3"
 alias upd="sudo apt update"
 alias upg="sudo apt upgrade -y"
+
+# Fix for WSL
+# cd ~
