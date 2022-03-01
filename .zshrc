@@ -47,6 +47,7 @@ alias arm="sudo apt remove -y"
 alias py="python3"
 alias upd="sudo apt update"
 alias upg="sudo apt upgrade -y"
+alias ipa="ip a"
 
 # Fix for WSL
 # cd ~
