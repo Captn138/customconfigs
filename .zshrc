@@ -1,3 +1,8 @@
+if [[ "/usr/local/bin" != *"$PATH"* ]]
+then
+        export PATH=$PATH:/usr/local/bin
+fi
+
 export PATH=$PATH:$HOME/.local/bin
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -25,9 +30,12 @@ HIST_STAMPS="dd/mm/yyyy"
 
 plugins=(
         git
+        pip
+        pyhton
         sudo
+        tmux
         zsh-autosuggestions
-        )
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -38,16 +46,19 @@ else
   export EDITOR='nano'
 fi
 
-alias szc="$EDITOR ~/.zshrc"
+alias szc="source ~/.zshrc"
 alias zc="$EDITOR ~/.zshrc"
-alias inst="sudo apt install -y"
-alias fix="sudo apt install -f"
-alias aurm="sudo apt autoremove -y"
-alias arm="sudo apt remove -y"
-alias py="python3"
-alias upd="sudo apt update"
-alias upg="sudo apt upgrade -y"
 alias ipa="ip a"
+alias pubkey="cat ~/.ssh/*.pub"
+if [ command -v apt ]
+then
+        alias inst="sudo apt install -y"
+        alias fix="sudo apt install -f"
+        alias aurm="sudo apt autoremove -y"
+        alias arm="sudo apt remove -y"
+        alias upd="sudo apt update"
+        alias upg="sudo apt upgrade -y"
+fi
 
 # Fix for WSL
 # cd ~
