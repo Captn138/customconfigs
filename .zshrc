@@ -31,7 +31,7 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(
         git
         pip
-        pyhton
+        python
         sudo
         tmux
         zsh-autosuggestions
